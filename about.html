@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .navbar {
+        background-color: #711db0; /* Updated navbar color */
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+      }
+
+      .container {
+        margin-top: 80px;
+      }
+
+      .timeline {
+        position: relative;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          left,
+          #711db0 0%,
+          #c21292 60%,
+          #ef4040 100%
+        ); /* Updated timeline color */
+        left: 14px;
+        top: 5px;
+        border-radius: 4px;
+      }
+
+      .timeline-month {
+        position: relative;
+        padding: 4px 15px 4px 35px;
+        background-color: #ffd700;
+        display: inline-block;
+        width: auto;
+        border-radius: 40px;
+        border: 1px solid #17191b;
+        border-right-color: black;
+        margin-bottom: 30px;
+        color: white; /* Updated month text color */
+      }
+
+      .timeline-month span {
+        position: absolute;
+        top: -1px;
+        left: calc(100% - 10px);
+        z-index: -1;
+        white-space: nowrap;
+        display: inline-block;
+        background-color: #111;
+        padding: 4px 10px 4px 20px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      .timeline-month:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(
+          top,
+          #711db0 0%,
+          #c21292 60%,
+          #ef4040 100%
+        ); /* Updated month icon color */
+        border-radius: 100%;
+        border: 1px solid #17191b;
+        left: 5px;
+      }
+
+      .timeline-section {
+        padding-left: 35px;
+        display: block;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .timeline-date {
+        margin-bottom: 15px;
+        padding: 2px 15px;
+        background: linear-gradient(#74cae3, #5bc0de 60%, #4ab9db);
+        position: relative;
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid #17191b;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      }
+
+      .timeline-section:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 1px;
+        background-color: #444950;
+        top: 12px;
+        left: 20px;
+      }
+
+      .timeline-section:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(
+          to bottom,
+          #711db0 0%,
+          #c21292 60%,
+          #ef4040 100%
+        ); /* Updated section icon color */
+        top: 7px;
+        left: 11px;
+        border: 1px solid #17191b;
+        border-radius: 100%;
+      }
+
+      .timeline-section .col-sm-4 {
+        margin-bottom: 15px;
+      }
+
+      .timeline-box {
+        position: relative;
+        background-color: #444950; /* Updated box background color */
+        border-radius: 15px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border: 1px solid #17191b;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .box-title {
+        padding: 5px 15px;
+        border-bottom: 1px solid #17191b;
+      }
+
+      .box-title i {
+        margin-right: 5px;
+      }
+
+      .box-content {
+        padding: 5px 15px;
+        background-color: #63b8ff; /* Updated box content background color */
+      }
+
+      .box-content strong {
+        color: #666;
+        font-style: italic;
+        margin-right: 5px;
+      }
+
+      .box-item {
+        margin-bottom: 5px;
+      }
+
+      .box-footer {
+        padding: 5px 15px;
+        border-top: 1px solid #ee2c2c;
+        background-color: #444950;
+        text-align: right;
+        font-style: italic;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 768px) {
+        .container {
+          margin-top: 160px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="./hero.html" style="color: white; text-decoration: none">Home</a>
+    </div>
+
+    <div class="container">
+      <div class="timeline">
+        <!-- Projects Section -->
+        <div class="timeline-month">Projects</div>
+        <div class="timeline-section">
+          <div class="timeline-date">January, 2023</div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="timeline-box">
+                <div class="box-title">
+                  <i class="fa fa-asterisk text-success" aria-hidden="true"></i>
+                  Project 1
+                </div>
+                <div class="box-content">
+                  <a class="btn btn-xs btn-default pull-right">Details</a>
+                  <div class="box-item">
+                    <strong>Description</strong>: Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                  </div>
+                  <div class="box-item">
+                    <strong>Technologies</strong>: HTML, CSS, JavaScript
+                  </div>
+                  <div class="box-item">
+                    <strong>Start Date</strong>: 01/15/2023
+                  </div>
+                </div>
+                <div class="box-footer">- Your Name</div>
+              </div>
+            </div>
+            <!-- Add more project items as needed -->
+          </div>
+        </div>
+
+        <!-- Hackathons Section -->
+        <div class="timeline-month">Hackathons</div>
+        <div class="timeline-section">
+          <div class="timeline-date">February, 2023</div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="timeline-box">
+                <div class="box-title">
+                  <i class="fa fa-trophy text-warning" aria-hidden="true"></i>
+                  Hackathon 1
+                </div>
+                <div class="box-content">
+                  <a class="btn btn-xs btn-default pull-right">Details</a>
+                  <div class="box-item">
+                    <strong>Achievements</strong>: 1st Place
+                  </div>
+                  <div class="box-item">
+                    <strong>Experience</strong>: Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                  </div>
+                </div>
+                <div class="box-footer">- Your Name</div>
+              </div>
+            </div>
+            <!-- Add more hackathon items as needed -->
+          </div>
+        </div>
+
+        <!-- Sessions Section -->
+        <div class="timeline-month">Sessions Conducted</div>
+        <div class="timeline-section">
+          <div class="timeline-date">March, 2023</div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="timeline-box">
+                <div class="box-title">
+                  <i
+                    class="fa fa-chalkboard-teacher text-info"
+                    aria-hidden="true"
+                  ></i>
+                  Session 1
+                </div>
+                <div class="box-content">
+                  <a class="btn btn-xs btn-default pull-right">Details</a>
+                  <div class="box-item">
+                    <strong>Topics Covered</strong>: HTML Basics
+                  </div>
+                  <div class="box-item">
+                    <strong>Key Takeaways</strong>: Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                  </div>
+                </div>
+                <div class="box-footer">- Your Name</div>
+              </div>
+            </div>
+            <!-- Add more session items as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
